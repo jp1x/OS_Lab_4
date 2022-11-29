@@ -1,20 +1,25 @@
 public class Main
 {
+
     public static void main(String[] args)
     {
-        int a = 0, b = 3, c = 3;
-        int n = 100000000;
+        int a = 0, b = 2, c = 3;
+        long unsigned = 0;
         long startTime;
         
         for (int j = 0; j < 7; j++)
         {
-            startTime = System.currentTimeMillis();
+            a = 0;
             
-            for (int i = 0; i < n; i++)
+            startTime = System.currentTimeMillis();
+            for (int i = 0; i < 100000000; i++)
             {
                 a += b * 2 + c - i;
             }
-            System.out.println((double) (System.currentTimeMillis() - startTime) * 1 + " ms");
+            unsigned = Integer.toUnsignedLong(a);
+            
+            System.out.println((double) (System.currentTimeMillis() - startTime) * 1.000 + " ms");
         }
+        System.out.println(unsigned);
     }
 }
