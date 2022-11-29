@@ -1,11 +1,15 @@
 from datetime import datetime
-import time
+import ctypes as ct
 
-a, b, c, i = 0, 3, 3, 0
+a = ct.c_uint(0)
+b = 2
+c = 3
+i = 0
 start_time = datetime.now()
 
-while i <= 10**8:
-    a += b * 2 + c - i
+while i < 10**8:
+    a.value += b * 2 + c - i
     i += 1
 
+print(a.value)
 print(datetime.now() - start_time)
