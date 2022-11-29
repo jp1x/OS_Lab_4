@@ -1,12 +1,14 @@
-﻿#include <iostream>
+#include <iostream>
 #include <chrono>
 using namespace std;
 using namespace chrono;
 
 int main()
 {
+    setlocale(LC_ALL, "Rus");
     auto start = system_clock::now();
-    int a = 0, b = 3, c = 3;
+    unsigned int a = 0;
+    int b = 2, c = 3;
 
     for (int i = 0; i < 100000000; i++)
     {
@@ -16,5 +18,6 @@ int main()
     auto end = system_clock::now();
     auto elapsed = duration_cast<milliseconds>(end - start);
 
-    cout << "Program finished execution within " << (float)elapsed.count() / 1000 << " seconds.\n";
+    cout << a << "\n";
+    cout << "Программа отработала за " << (float)elapsed.count() / 1000 << " секунд.\n";
 }
